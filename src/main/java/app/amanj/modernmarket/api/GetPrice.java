@@ -35,10 +35,13 @@ public class GetPrice {
 
         double priceGram = priceKg / 1000;
 
+        double priceMithqal = priceGram * 4.25;
+
         return switch (unit) {
             case "oz" -> String.valueOf(pricePerOunce);
             case "kg" -> String.valueOf(priceKg);
             case "g" -> String.valueOf(priceGram);
+            case "mithqal" -> String.valueOf(priceMithqal);
             default -> "Invalid unit";
         };
     }
