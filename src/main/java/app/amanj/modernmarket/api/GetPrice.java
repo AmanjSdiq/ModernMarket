@@ -24,10 +24,7 @@ public class GetPrice {
         ResponseEntity<Price> exchange = restTemplate.exchange(url, HttpMethod.GET, null, Price.class);
         log.info(exchange.getBody());
 
-        double pricePerOunce = 0; // replace this with actual price
-        if (exchange.getBody() != null) {
-            pricePerOunce = exchange.getBody().getPrice();
-        }
+        double pricePerOunce = exchange.getBody().getPrice();
 
         double ouncesPerKg = 32.1507;
 
